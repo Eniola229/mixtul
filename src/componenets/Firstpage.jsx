@@ -4,7 +4,7 @@ import firsttwo from "../images/front.jpg";
 import theme from './Theme';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
-
+import { Link } from 'react-router-dom';
 import Sidenav from "../componenets/Sidenav";
 
 
@@ -74,6 +74,7 @@ function Firstpage() {
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const isIpad = useMediaQuery(theme.breakpoints.up('md'));
 
+
   return (
     <div style={styles.root}>
       <div style={styles.overlay}></div>
@@ -98,7 +99,7 @@ function Firstpage() {
             }}
           onClick={() => (window.location.href = '/shop')}
         >
-          Start Shopping
+         START SHOPPING
         </Button>
       </Container>
       <Sidenav/>
