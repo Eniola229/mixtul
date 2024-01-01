@@ -6,7 +6,10 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Sidenav from "../componenets/Sidenav";
-
+import Shop from "../Pages/Shop";
+import { BrowserRouter, Routes, Route, Redirect, Switch, useNavigate    } from 'react-router-dom';
+import Routespages from "../Pages/Routespages"
+import Header from "./Header";
 
 const styles = {
   root: {
@@ -74,8 +77,15 @@ function Firstpage() {
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const isIpad = useMediaQuery(theme.breakpoints.up('md'));
 
+ const navigate = useNavigate();
+
+  const redirectToOtherPage = () => {
+    // Use the navigate function to navigate to another page
+    navigate('/Routespages');
+  };
 
   return (
+  <>
     <div style={styles.root}>
       <div style={styles.overlay}></div>
       <Container  sx={{
@@ -97,13 +107,15 @@ function Firstpage() {
               fontSize: isPhone ? '1em' : isTablet ? '1.2em' : '1.4em',
               padding: isPhone ? '10px 20px' : isTablet ? '12px 24px' : '15px 30px',
             }}
-          onClick={() => (window.location.href = '/shop')}
+           component={Link} to="/Shop"
         >
          START SHOPPING
         </Button>
+    
       </Container>
       <Sidenav/>
     </div>
+    </>
   );
 }
 

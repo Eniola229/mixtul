@@ -1,15 +1,19 @@
 import React from 'react';
 import { List, ListItem, ListItemIcon } from '@mui/material';
+import { Container, Typography, Button } from '@mui/material';
 import {
   Home as HomeIcon,
   ShoppingCart as ShoppingCartIcon,
   Info as InfoIcon,
   ContactSupport as ContactSupportIcon,
 } from '@mui/icons-material';
+import Routespages from "../Pages/Routespages"
+import Firstpage from "../componenets/Firstpage"
+import Link from '@mui/material/Link';
 
 const Sidenav = () => {
   const iconList = [
-    { icon: <HomeIcon sx={{color:"white", fontSize:"40px"}} />, text: 'Home' },
+    { icon:    <Link href="/"> <HomeIcon sx={{color:"white", fontSize:"40px"}}/>  </Link>},
     { icon: <ShoppingCartIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'Shop' },
     { icon: <InfoIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'About' },
     { icon: <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'Contact' },
