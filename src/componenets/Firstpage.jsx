@@ -53,7 +53,7 @@ const styles = {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   button: {
-    margin: '20px 0', // Adjusted margin for centering
+    margin: '20px 0', 
     padding: '15px 30px',
     fontSize: '1.4em',
     backgroundColor: '#992D00',

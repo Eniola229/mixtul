@@ -10,11 +10,12 @@ import {
 import Routespages from "../Pages/Routespages"
 import Firstpage from "../componenets/Firstpage"
 import Link from '@mui/material/Link';
+import Shop from "../Pages/Shop";
 
 const Sidenav = () => {
   const iconList = [
     { icon:    <Link href="/"> <HomeIcon sx={{color:"white", fontSize:"40px"}}/>  </Link>},
-    { icon: <ShoppingCartIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'Shop' },
+    { icon:    <Link href="/Shop"> <ShoppingCartIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /> </Link> },
     { icon: <InfoIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'About' },
     { icon: <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'Contact' },
   ];
