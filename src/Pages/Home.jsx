@@ -24,9 +24,9 @@ import bg from "../images/bg.jpg";
 export default function Home() {
 
 	return(
-		<>
+		<div>
 		<Header/>
 		<Sidenav/>
 		<Routespages/>
-		</>
+		</div>
 )}

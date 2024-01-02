@@ -3,16 +3,23 @@ import Firstpage from "../componenets/Firstpage";
 import Shop from "./Shop"
 import Cart from "../Products/Cart"
 import React, { useState } from 'react';
+import Contact from "./Contact";
+import Login from "../Auth/Login"
+import Signup from "../Auth/Signup"
+
 export default function Routespages() {
 
   const [cartItems, setCartItems] = useState([]);
-  
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Firstpage />} />
         <Route path="/Shop" element={<Shop cartItems={cartItems} setCartItems={setCartItems}/>} />
         <Route path="/Cart" element={<Cart cartItems={cartItems}/>} />
+        <Route path="/Contact" element={<Contact/>} />
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/Signup" element={<Signup/>} />
       </Routes>
     </Router>
   );

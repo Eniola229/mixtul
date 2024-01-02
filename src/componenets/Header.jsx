@@ -4,6 +4,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import theme from './Theme';
 import Link from '@mui/material/Link';
 import Shop from "../Pages/Shop";
+import Contact from "../Pages/Contact"
+import UserDetails from "../Auth/UserDetails"
+import { getAuth, onAuthStateChanged  } from "firebase/auth";
+import Logout from "../Auth/Logout"
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#992D00', // Very dark orange
@@ -37,13 +41,35 @@ const Header = () => {
 
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
+    const auth = getAuth();
+  const user = auth.currentUser;
+
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const displayName = user.displayName;
+  const email = user.email;
+  const photoURL = user.photoURL;
+  const emailVerified = user.emailVerified;
+
+  // The user's ID, unique to the Firebase project. Do NOT use
+  // this value to authenticate with your backend server, if
+  // you have one. Use User.getToken() instead.
+  const uid = user.uid;
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
   return (
+    <>
+    { user ? <>
     <StyledAppBar position="fixed">
       <Toolbar>
         <LeftContainer>
          <Link href="/" sx={{color:"white", textDecoration:"none"}}> 
          <Typography  variant="h6" sx={{fontWeight:"bold", fontStyle:"italic", fontFamily:"cursive", letterSpacing:2}} component="div" color="inherit">
-            Mixtul
+            Mixtul 
           </Typography>
          </Link>
 
@@ -58,23 +84,70 @@ const Header = () => {
              <Button color="inherit">Shop</Button>
           </Link>
           <Button color="inherit">About</Button>
-          <Button color="inherit">Contact</Button>
+          <Link href="/Contact" sx={{color:"white", textDecoration:"none"}}> 
+             <Button color="inherit">Contact</Button>
+          </Link>
             
         </CenterContainer>
 
         <RightContainer sx={{ marginLeft: isSmallScreen ? 'auto' : 0}}>
-        
+         <Link href="/Cart" sx={{color:"white", textDecoration:"none"}}> 
           <StyledIconButton sx={{marginLeft:"1rem"}} color="inherit" aria-label="Shopping Cart">
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={0} color="error">
               <ShoppingCartIcon />
             </Badge>
           </StyledIconButton>
-
-          <Button color="inherit" sx={{background:"chocolate", marginLeft:"1rem"}}>Login</Button>
-
+          </Link>
+          <Link href="/Login" sx={{color:"white", textDecoration:"none"}}> 
+              <Logout/>                
+          </Link>
         </RightContainer>
       </Toolbar>
     </StyledAppBar>
+         </>: 
+
+         <StyledAppBar position="fixed">
+      <Toolbar>
+        <LeftContainer>
+         <Link href="/" sx={{color:"white", textDecoration:"none"}}> 
+         <Typography  variant="h6" sx={{fontWeight:"bold", fontStyle:"italic", fontFamily:"cursive", letterSpacing:2}} component="div" color="inherit">
+            Mixtul 
+          </Typography>
+         </Link>
+
+        </LeftContainer>
+
+        <CenterContainer sx={{ display: isSmallScreen ? "none" : "flex",}}>
+
+          <Link href="/" sx={{color:"white", textDecoration:"none"}}> 
+             <Button color="inherit">Home</Button>
+          </Link>
+          <Link href="/Shop" sx={{color:"white", textDecoration:"none"}}> 
+             <Button color="inherit">Shop</Button>
+          </Link>
+          <Button color="inherit">About</Button>
+          <Link href="/Contact" sx={{color:"white", textDecoration:"none"}}> 
+             <Button color="inherit">Contact</Button>
+          </Link>
+            
+        </CenterContainer>
+
+        <RightContainer sx={{ marginLeft: isSmallScreen ? 'auto' : 0}}>
+         <Link href="/Cart" sx={{color:"white", textDecoration:"none"}}> 
+          <StyledIconButton sx={{marginLeft:"1rem"}} color="inherit" aria-label="Shopping Cart">
+            <Badge badgeContent={0} color="error">
+              <ShoppingCartIcon />
+            </Badge>
+          </StyledIconButton>
+          </Link>
+          <Link href="/Login" sx={{color:"white", textDecoration:"none"}}> 
+               <Button color="inherit" sx={{background:"chocolate", marginLeft:"1rem"}}>Login</Button>
+           </Link>
+        </RightContainer>
+      </Toolbar>
+    </StyledAppBar>
+       }
+    </>
   );
 };
 

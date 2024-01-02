@@ -53,8 +53,14 @@ const defaultTheme = createTheme();
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" sx={{width:"20%", backgroundColor:"darkorange"}}>New</Button>
-              <Button variant="outlined" sx={{width:"20%", border:"2px solid darkorange", color:"darkorange"}}>Used</Button>
+              <Button variant="contained" sx={{width:"20%", backgroundColor:"darkorange",  '&:hover': {
+    backgroundColor: 'chocolate',
+  },}}>New</Button>
+              <Button variant="outlined" sx={{width:"20%", border:"2px solid darkorange", color:"darkorange",  '&:hover': {
+    backgroundColor: 'darkorange',
+    border:"none",
+    color:"white"
+  },}}>Used</Button>
             </Stack>
           </Container>
         </Box>

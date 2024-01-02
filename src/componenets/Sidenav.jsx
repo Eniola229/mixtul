@@ -17,7 +17,7 @@ const Sidenav = () => {
     { icon:    <Link href="/"> <HomeIcon sx={{color:"white", fontSize:"40px"}}/>  </Link>},
     { icon:    <Link href="/Shop"> <ShoppingCartIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /> </Link> },
     { icon: <InfoIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'About' },
-    { icon: <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'Contact' },
+    { icon:    <Link href="/Contact"> <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />,  </Link>},
   ];
 
   const sidebarHeight = 100; // Set the height of the sidebar as needed
