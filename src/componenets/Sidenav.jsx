@@ -11,13 +11,14 @@ import Routespages from "../Pages/Routespages"
 import Firstpage from "../componenets/Firstpage"
 import Link from '@mui/material/Link';
 import Shop from "../Pages/Shop";
+import About from "../Pages/About";
 
 const Sidenav = () => {
   const iconList = [
     { icon:    <Link href="/"> <HomeIcon sx={{color:"white", fontSize:"40px"}}/>  </Link>},
     { icon:    <Link href="/Shop"> <ShoppingCartIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /> </Link> },
-    { icon: <InfoIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />, text: 'About' },
-    { icon:    <Link href="/Contact"> <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} />,  </Link>},
+    { icon:    <Link href="/About"> <InfoIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /></Link> },
+    { icon:    <Link href="/Contact"> <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /> </Link>},
   ];
 
   const sidebarHeight = 100; // Set the height of the sidebar as needed

@@ -17,7 +17,7 @@ import { auth } from "./Firebase";
 import Swal from 'sweetalert2';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Signwithgoogle from "./Signwithgoogle"  
-
+import Footer from "../componenets/Footer";
 
 
 const defaultTheme = createTheme();
@@ -145,6 +145,7 @@ export default function Signup() {
       </Container>
      
     </ThemeProvider>
+    <Footer/>
     </>
   );
 }

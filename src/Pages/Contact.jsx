@@ -9,6 +9,7 @@ import {
   styled,
 } from '@mui/material';
 import cbg from "../images/cbg.jpg";
+import Footer from "../componenets/Footer";
 
 const StyledBox = styled(Box)({
   backgroundImage: `url(${cbg})`,
@@ -71,6 +72,7 @@ const Contact = () => {
   };
 
   return (
+    <>
     <StyledBox>
       <Container>
         <StyledFormContainer>
@@ -116,6 +118,8 @@ const Contact = () => {
         </StyledFormContainer>
       </Container>
     </StyledBox>
+    <Footer/>
+    </>
   );
 };
 

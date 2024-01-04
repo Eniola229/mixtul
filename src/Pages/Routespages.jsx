@@ -1,11 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Firstpage from "../componenets/Firstpage";
-import Shop from "./Shop"
+import Shop from "./Shop";
+import About from "./About";
 import Cart from "../Products/Cart"
 import React, { useState } from 'react';
 import Contact from "./Contact";
-import Login from "../Auth/Login"
-import Signup from "../Auth/Signup"
+import Login from "../Auth/Login";
+import Signup from "../Auth/Signup";
+import ALogin from "../Admin/Login";
+import Home from "../Admin/Home";
+
 
 export default function Routespages() {
 
@@ -20,6 +24,9 @@ export default function Routespages() {
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/Signup" element={<Signup/>} />
+        <Route path="/About" element={<About/>} />
+        <Route path="/ALogin" element={<ALogin/>} />
+         <Route path="/Home" element={<Home/>} />
       </Routes>
     </Router>
   );

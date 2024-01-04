@@ -17,7 +17,7 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CardActionArea } from '@mui/material';
 import sn from "../images/sn.jpg";
-import Drumscard from "./Drumscard"
+import Products from "./Products"
 import bg from "../images/bg.jpg";
 
 const defaultTheme = createTheme();
@@ -45,7 +45,7 @@ const defaultTheme = createTheme();
               gutterBottom
 
             >
-             Musical Instruments
+              Enjoy Shopping
             </Typography>
             <Stack
               sx={{ pt: 2 }}
@@ -65,7 +65,7 @@ const defaultTheme = createTheme();
           </Container>
         </Box>
 
-        <Drumscard/>
+        <Products/>
         
       </main>
       </ThemeProvider>

@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import theme from './Theme';
 import Link from '@mui/material/Link';
 import Shop from "../Pages/Shop";
+import About from "../Pages/About";
 import Contact from "../Pages/Contact"
 import UserDetails from "../Auth/UserDetails"
 import { getAuth, onAuthStateChanged  } from "firebase/auth";
@@ -83,7 +84,9 @@ const Header = () => {
           <Link href="/Shop" sx={{color:"white", textDecoration:"none"}}> 
              <Button color="inherit">Shop</Button>
           </Link>
-          <Button color="inherit">About</Button>
+          <Link href="/About" sx={{color:"white", textDecoration:"none"}}> 
+             <Button color="inherit">About</Button>
+          </Link>
           <Link href="/Contact" sx={{color:"white", textDecoration:"none"}}> 
              <Button color="inherit">Contact</Button>
           </Link>
@@ -125,7 +128,9 @@ const Header = () => {
           <Link href="/Shop" sx={{color:"white", textDecoration:"none"}}> 
              <Button color="inherit">Shop</Button>
           </Link>
-          <Button color="inherit">About</Button>
+           <Link href="/About" sx={{color:"white", textDecoration:"none"}}> 
+             <Button color="inherit">About</Button>
+          </Link>
           <Link href="/Contact" sx={{color:"white", textDecoration:"none"}}> 
              <Button color="inherit">Contact</Button>
           </Link>

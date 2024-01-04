@@ -2,6 +2,7 @@ import Shopheader from "../componenets/Shopheader"
 import ProductCard from "../componenets/ProductCard"
 import Ads from "../componenets/Ads"
 import Sidenav from "../componenets/Sidenav"
+import Footer from "../componenets/Footer";
 import {
   Container,
   Typography,
@@ -25,6 +26,7 @@ export default function Shop() {
 		<Ads/>
 		<Sidenav/>
 		<ProductCard/>
+		<Footer/>
 	</Container>
 	    </>
 )}
