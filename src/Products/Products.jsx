@@ -11,6 +11,7 @@ import {
   CardContent,
   CardActions,
   Button,
+  Box,
   styled,
   Snackbar,
 } from '@mui/material';
@@ -58,7 +59,7 @@ const StyledRating = styled('div')({
 });
 
 const StyledAmount = styled(Typography)({
-  fontSize: '1.2rem',
+  fontSize: '1rem',
   fontWeight: 'bold',
   color: '#333',
   marginTop: '8px',
@@ -119,7 +120,11 @@ const Products = () => {
 
   return (
     <Container sx={{ py: 6, }} maxWidth="md">
-     {loading ? <CircularProgress sx={{justifyContent:"center", color:"chocolate"}} color="success" />:(
+     {loading ?
+      <Box sx={{justifyContent:"center", alignItems:"center", textAlign:"center", marginTop:"5rem"}}>
+          <CircularProgress sx={{justifyContent:"center", color:"chocolate"}} color="success" /> 
+      </Box>
+     :(
       <Grid container spacing={4}>
      {products.map((product) => (
 
@@ -139,8 +144,11 @@ const Products = () => {
                   ★ {product.rate}
                 </Typography>
               </StyledRating>
-              <StyledAmount>
-                 {product.ammount}
+              <StyledAmount variant="body2">
+                ₦ {product.ammount}
+              </StyledAmount>
+              <StyledAmount sx={{color:"green", fontSize:"10px"}}>
+                 {product.aval}
               </StyledAmount>
             </StyledCardContent>
           </CardActionArea>

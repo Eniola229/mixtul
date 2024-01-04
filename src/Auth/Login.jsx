@@ -22,7 +22,7 @@ import { BrowserRouter, Routes, Route, Link, Redirect, Switch  } from 'react-rou
 import Signup from "./Signup"
 import Footer from "../componenets/Footer";
 import CircularProgress from '@mui/material/CircularProgress';
-
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const defaultTheme = createTheme();
 export default function Login() {
@@ -155,7 +155,7 @@ export default function Login() {
 
             <Link to="/ALogin" sx={{color:"red", textDecoration:"none"}}>
             
-              Admin Dashbaord
+              <AdminPanelSettingsIcon/>
 
             </Link>
              <Grid container>

@@ -43,7 +43,9 @@ export const mainListItems = (
       <ListItemIcon>
       <PeopleIcon />
       </ListItemIcon>
-       <ListItemText primary="Customers" />
+        <Link to="/Userlist" style={{color:"black", textDecoration:"none"}}>
+      <ListItemText primary="Users" />
+      </Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>

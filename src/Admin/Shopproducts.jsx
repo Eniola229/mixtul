@@ -12,17 +12,21 @@ import {
   CardActions,
   Button,
   styled,
+  Box,
   Snackbar,
 } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import sn from "../images/sn.jpg";
 import bg from "../images/bg.jpg";
 import { Link } from 'react-router-dom';
-import Routespages from "../Pages/Routespages";
 import { collection } from 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { db } from "../Auth/Firebase";
 import { onSnapshot } from 'firebase/firestore'
+import CircularProgress from '@mui/material/CircularProgress';
+import Swal from 'sweetalert2';
+import Routepages from "./Routepages";
+import { deleteDoc, doc } from 'firebase/firestore';
 
 const StyledCard = styled(Card)({
   maxWidth: 240,
@@ -56,7 +60,7 @@ const StyledRating = styled('div')({
 });
 
 const StyledAmount = styled(Typography)({
-  fontSize: '1.2rem',
+  fontSize: '1rem',
   fontWeight: 'bold',
   color: '#333',
   marginTop: '8px',
@@ -65,7 +69,7 @@ const StyledAmount = styled(Typography)({
 const StyledButton = styled(Button)({
   backgroundColor: 'chocolate',
   color: '#fff',
-  width:"100%",
+  width:"50%",
   textAlign:"center",
   '&:hover': {
     backgroundColor: 'darkorange',
@@ -78,7 +82,6 @@ const Shopproducts = () => {
   const navigate = useNavigate(); 
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
-
 
   //logic for displaying products
 
@@ -94,6 +97,13 @@ const Shopproducts = () => {
     }, 
     (error) => {
        console.log(error);
+       Swal.fire({
+          title: 'Oops...',
+          text: (error.code),
+          icon: 'error',
+          confirmButtonText: 'OK'
+        })
+          {/*Swal stops here*/}
     } 
     );
     return () => {
@@ -115,8 +125,27 @@ const Shopproducts = () => {
     navigate('/Cart'); 
   };
 
+  const handleDelete = async (productId) => {
+    try {
+      // Delete the document with the specified product ID
+      await deleteDoc(doc(db, 'products', productId));
+      console.log('Product deleted successfully!');
+
+      // Refresh the products after deletion
+      const updatedProducts = products.filter((product) => product.id !== productId);
+      setProducts(updatedProducts);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  }
+
   return (
     <Container sx={{ py: 6, }} maxWidth="md">
+         {loading ?
+
+         <Box sx={{justifyContent:"center", alignItems:"center", textAlign:"center", marginTop:"5rem"}}>
+          <CircularProgress sx={{justifyContent:"center", color:"chocolate"}} color="success" /> 
+          </Box>:(
       <Grid container spacing={4}>
      {products.map((product) => (
 
@@ -137,13 +166,22 @@ const Shopproducts = () => {
                 </Typography>
               </StyledRating>
               <StyledAmount>
-                 {product.ammount}
+                ₦ {product.ammount}
               </StyledAmount>
+              <Typography variant="body2" sx={{color:"green"}}>
+                 {product.aval}
+                </Typography>
+
             </StyledCardContent>
           </CardActionArea>
           <CardActions>
-            <StyledButton size="small" onClick={handleAddToCart}>
-              Add to Cart
+          <Link to="/Update">
+            <StyledButton  size="small">
+              Edit
+            </StyledButton>
+            </Link>
+            <StyledButton onClick={() => handleDelete(product.id)} sx={{background:"red"}} size="small">
+              Delete
             </StyledButton>
           </CardActions>
         </StyledCard>
@@ -153,6 +191,8 @@ const Shopproducts = () => {
       
        
       </Grid>
+
+        )}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={2000}

@@ -14,11 +14,8 @@ export default function UserDetails() {
 
   onAuthStateChanged(auth, (user) => {
   if (user) {
-    const displayName = user.displayName;
+  
   const email = user.email;
-  const photoURL = user.photoURL;
-  const emailVerified = user.emailVerified;
-
   const uid = user.uid;
   } else {
     // User is signed out

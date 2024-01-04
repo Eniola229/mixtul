@@ -11,7 +11,7 @@ import ALogin from "../Admin/Login";
 import Home from "../Admin/Home";
 import Corders from "../Admin/Corders";
 import Shopproducts from "../Admin/Shopproducts";
-
+import Userlist from "../Admin/Userlist";
 
 export default function Routespages() {
 
@@ -32,6 +32,7 @@ export default function Routespages() {
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/Corders" element={<Corders/>} />
         <Route path="/Shopproducts" element={<Shopproducts/>} />
+        <Route path="/Userlist" element={<Userlist/>} />
       </Routes>
     </Router>
   );

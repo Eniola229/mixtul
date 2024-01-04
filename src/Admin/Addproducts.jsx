@@ -22,6 +22,8 @@ import { addDoc } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
 import { serverTimestamp } from 'firebase/firestore';
 import { db } from "../Auth/Firebase";
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
+import Routepages from "./Routepages";
 
 const theme = createTheme({
   palette: {
@@ -125,7 +127,7 @@ const Addproducts = () => {
       ...data,
       timestamp: serverTimestamp()
     })
-    navigate("/Shop");
+    navigate("/Shopproducts");
 
   }
 
@@ -186,17 +188,15 @@ const Addproducts = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sx={{ backgroundColor: 'chocolate', color: 'white', padding: 2, borderRadius: 5 }}>
-                <InputLabel htmlFor="image-input" sx={{ color: 'white' }}>
-                  Choose Image to add to product
-                </InputLabel>
-                <Input
+              <Grid item xs={12} sx={{ backgroundColor: 'chocolate', display:"flex", color: 'white', padding: 1, borderRadius: 5 }}>
+                
+                <input
                   type="file"
                   id="image-input"
                    onChange={(e)=> setFile(e.target.files[0])}
-                  endAdornment={<PhotoCamera position="end" />}
+                  endAdornment={<InsertPhotoIcon position="end" />}
                   sx={{ display: 'none' }}
-                />
+                /><InsertPhotoIcon position="end" />
               </Grid>
               
             </Grid>

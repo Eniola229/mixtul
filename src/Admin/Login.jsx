@@ -21,63 +21,37 @@ import * as ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link, Redirect, Switch  } from 'react-router-dom';
 import Footer from "../componenets/Footer";
 import Home from "./Home";
-
+import {useParams, useNavigate} from "react-router-dom";
+import Routespages from "../Pages/Routespages"
 const defaultTheme = createTheme();
 export default function Login() {
 
 
-  const [email, setEmail] = useState("");
+  const [code, setCode] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [authUser, setAuthUser] = useState(null);
   const [currentUser, setCurrentUser] = useState();
-  
+  const navigate = useNavigate();
 
 
 
     {/* For all the signin logic*/}
     const signIn = (e) => {
       setIsLoading(true);
-      e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredentail) => {
-          console.log(userCredentail)
-          {/*This show if login is succesfully*/}
-        Swal.fire({
-          title: 'Login Successful',
-          icon: 'success',
-          confirmButtonText: 'Continue'
-        })
-    
-          {/*Swal stops here*/}
-        }).catch((err) => {
-          setIsLoading(false);
-           {/*If there is any error*/}
+      if (code == "mixtul2023") {
+           navigate("/Home");
+      } else{
           Swal.fire({
           title: 'Oops...',
-          text: (err.code),
+          text: "Wrong Code",
           icon: 'error',
           confirmButtonText: 'OK'
         })
           {/*Swal stops here*/}
-        })
+      }
 
     }
-
-    useEffect(() => {
-        const listen = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setAuthUser(user)
-            } else{
-                setAuthUser(null)
-            }
-        });
-
-        return () => {
-            listen();
-        }
-    }, []);
-
   return (
     <>
     
@@ -108,34 +82,19 @@ export default function Login() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="E-mail"
-              name="email"
-              autoComplete="email"
+              id="code"
+              label="code"
+              name="code"
+              autoComplete="code"
               autoFocus
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setCode(e.target.value)}
               required
               sx={{border:"1px solid chocolate", placeholder:"chocolate",    '&:hover': {
      border:"1px solid chocolate"
     },
 }}
             />
-               {/* For all the password details */}
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              sx={{border:"1px solid chocolate", placeholder:"chocolate",    '&:hover': {
-     border:"1px solid chocolate"
-    },
-}}
-            />
+           
             <Button
               type="submit"
               fullWidth
@@ -146,9 +105,7 @@ export default function Login() {
             >
              Login
             </Button>
-            <Link to="/Home">
-            Home
-            </Link>
+            
             </form>
           </Box>
         </Box>

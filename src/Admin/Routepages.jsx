@@ -4,9 +4,10 @@ import Login from "./Login";
 import Home from "./Home";
 import Corders from "./Corders";
 import Shop from "../Pages/Shop";
+import UpdateProduct from './UpdateProduct';
+import Userlist from "./Userlist";
 
-
-export default function Routespages() {
+export default function Routepages() {
 
 
   return (
@@ -14,7 +15,9 @@ export default function Routespages() {
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/Home" element={<Home />} />
-         <Route path="/Shop" element={<Shop />} />
+        <Route path="/Shop" element={<Shop />} />
+        <Route path="/Update" element={<UpdateProduct />} />
+        <Route path="/Userlist" element={<Userlist />} />
       </Routes>
     </Router>
   );
