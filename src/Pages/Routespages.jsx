@@ -9,6 +9,8 @@ import Login from "../Auth/Login";
 import Signup from "../Auth/Signup";
 import ALogin from "../Admin/Login";
 import Home from "../Admin/Home";
+import Corders from "../Admin/Corders";
+import Shopproducts from "../Admin/Shopproducts";
 
 
 export default function Routespages() {
@@ -26,7 +28,10 @@ export default function Routespages() {
         <Route path="/Signup" element={<Signup/>} />
         <Route path="/About" element={<About/>} />
         <Route path="/ALogin" element={<ALogin/>} />
-         <Route path="/Home" element={<Home/>} />
+        <Route path="/Home" element={<Home/>} />
+        <Route path="/Contact" element={<Contact/>} />
+        <Route path="/Corders" element={<Corders/>} />
+        <Route path="/Shopproducts" element={<Shopproducts/>} />
       </Routes>
     </Router>
   );

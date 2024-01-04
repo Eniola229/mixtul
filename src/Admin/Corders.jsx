@@ -6,18 +6,6 @@ export default function Corders(){
 		<>
 		<Orders/>
 		<h1>
-				ojnv;hnjklnlkv
-
-				\ef
-				event
-				variantfvwv
-				variantfvwv
-
-				createData
-
-				createDatac
-
-				createDatac
 		</h1>
 		</>
 	)

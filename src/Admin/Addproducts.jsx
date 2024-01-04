@@ -125,7 +125,7 @@ const Addproducts = () => {
       ...data,
       timestamp: serverTimestamp()
     })
-    navigate("/Soop");
+    navigate("/Shop");
 
   }
 
@@ -137,14 +137,14 @@ const Addproducts = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    {isSubmit ? <CircularProgress color="success" />:(
-       <Container component="main" maxWidth="xs">
+    {isSubmit ? <CircularProgress sx={{justifyContent:"center"}} color="success" />:(
+       <Container component="main" sx={{width:"100%"}} >
         <Paper elevation={3} style={{ padding: 20 }}>
           <Typography component="h1" variant="h5" align="center" color="secondary.main">
             Upload Products
           </Typography>
           <form  onSubmit={handleSubmit}>
-            <Grid sx={{display:"flex", flex:"flexWrap"}} container spacing={2}>
+            <Grid sx={{display:"flex", flex:"flexWrap"}} container spacing={3}>
               <Grid item xs={12}>
                 <TextField
                   label="Product Name"

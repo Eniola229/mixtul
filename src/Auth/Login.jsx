@@ -21,6 +21,7 @@ import * as ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link, Redirect, Switch  } from 'react-router-dom';
 import Signup from "./Signup"
 import Footer from "../componenets/Footer";
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const defaultTheme = createTheme();
@@ -29,16 +30,15 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [authUser, setAuthUser] = useState(null);
   const [currentUser, setCurrentUser] = useState();
-  
+  const [loading, setLoading] = useState(false);
 
 
 
     {/* For all the signin logic*/}
     const signIn = (e) => {
-      setIsLoading(true);
+       setLoading(true);
       e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredentail) => {
@@ -52,7 +52,7 @@ export default function Login() {
     
           {/*Swal stops here*/}
         }).catch((err) => {
-          setIsLoading(false);
+          setLoading(false);
            {/*If there is any error*/}
           Swal.fire({
           title: 'Oops...',
@@ -137,6 +137,7 @@ export default function Login() {
     },
 }}
             />
+   
             <Button
               type="submit"
               fullWidth
@@ -145,8 +146,13 @@ export default function Login() {
       backgroundColor: 'darkorange',
     }, }}
             >
+            {loading ? <CircularProgress sx={{justifyContent:"center", color:"white"}} color="success" />:(
              Login
-            </Button>
+             )}
+            Login
+              </Button>
+             
+
             <Link to="/ALogin" sx={{color:"red", textDecoration:"none"}}>
             
               Admin Dashbaord

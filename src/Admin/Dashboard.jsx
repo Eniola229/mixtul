@@ -17,11 +17,12 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-// import { mainListItems, secondaryListItems } from './listitems';
+import { mainListItems, secondaryListItems } from './listitems';
 import Addproducts from './Addproducts'
 // import Deposits from './Deposits';
 import Orders from './Orders';
 import Routespages from "./Routepages";
+import Shopproducts from "./Shopproducts";
 
 function Copyright(props) {
   return (
@@ -122,14 +123,14 @@ export default function Dashboard() {
             >
               Dashboard
             </Typography>
-            <IconButton color="inherit">
+           {/* <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton>*/}
           </Toolbar>
         </AppBar>
-      {/*  <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
               display: 'flex',
@@ -143,13 +144,13 @@ export default function Dashboard() {
             </IconButton>
           </Toolbar>
           <Divider />
-         {/* <List component="nav">
+          <List component="nav">
             {mainListItems}
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
-          </List>*/}
+          </List>
 
-        {/*</Drawer>*/}*/}
+        </Drawer>
         <Box
           component="main"
           sx={{
@@ -172,7 +173,7 @@ export default function Dashboard() {
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 300,
+                    height: 500,
                   }}
                 >
                  <Addproducts/>
@@ -195,6 +196,9 @@ export default function Dashboard() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Orders />
+                </Paper>
+                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Shopproducts />
                 </Paper>
               </Grid>
             </Grid>

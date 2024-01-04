@@ -9,9 +9,9 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import Routespages from "./Routepages";
+//import Routespages from "./Routepages";
 import { Link  } from 'react-router-dom';
-
+import Routespages from "../Pages/Routespages";
 
 export const mainListItems = (
   <React.Fragment>
@@ -33,15 +33,17 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <PeopleIcon />
+      <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+       <Link to="/Shopproducts" style={{color:"black", textDecoration:"none"}}>
+      <ListItemText primary="Products" />
+      </Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <BarChartIcon />
+      <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+       <ListItemText primary="Customers" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>

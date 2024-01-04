@@ -18,13 +18,11 @@ import MuiAlert from '@mui/material/Alert';
 import sn from "../images/sn.jpg";
 import bg from "../images/bg.jpg";
 import { Link } from 'react-router-dom';
-import Routespages from "../Pages/Routespages"
-import Cart from "./Cart";
+import Routespages from "../Pages/Routespages";
 import { collection } from 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { db } from "../Auth/Firebase";
 import { onSnapshot } from 'firebase/firestore'
-import CircularProgress from '@mui/material/CircularProgress';
 
 const StyledCard = styled(Card)({
   maxWidth: 240,
@@ -74,7 +72,7 @@ const StyledButton = styled(Button)({
   },
 });
 
-const Products = () => {
+const Shopproducts = () => {
   const [cartItems, setCartItems] = useState([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const navigate = useNavigate(); 
@@ -119,7 +117,6 @@ const Products = () => {
 
   return (
     <Container sx={{ py: 6, }} maxWidth="md">
-     {loading ? <CircularProgress sx={{justifyContent:"center", color:"chocolate"}} color="success" />:(
       <Grid container spacing={4}>
      {products.map((product) => (
 
@@ -150,10 +147,12 @@ const Products = () => {
             </StyledButton>
           </CardActions>
         </StyledCard>
+
+
       ))}
+      
        
       </Grid>
-      )}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={2000}
@@ -167,4 +166,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Shopproducts;
