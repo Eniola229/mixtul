@@ -77,7 +77,7 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Typography variant="body2" align="center" style={{ marginTop: '20px' }}>
-          © 2024 Mixtul. All rights reserved.
+          © 2024 Mixtul | Develop by AfricTech All rights reserved.
         </Typography>
       </Container>
     </footer>

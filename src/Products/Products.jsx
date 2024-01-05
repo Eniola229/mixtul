@@ -1,4 +1,3 @@
-// Products.jsx
 import React, { useState, useEffect  } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import {
@@ -20,7 +19,6 @@ import sn from "../images/sn.jpg";
 import bg from "../images/bg.jpg";
 import { Link } from 'react-router-dom';
 import Routespages from "../Pages/Routespages"
-import Cart from "./Cart";
 import { collection } from 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { db } from "../Auth/Firebase";
@@ -112,10 +110,6 @@ const Products = () => {
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
-  };
-
-  const handleViewCart = () => {
-    navigate('/Cart'); 
   };
 
   return (

@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import bg from "../images/bg.jpg";
 
+
 export default function Shop() {
 	return(
 		<>

@@ -25,7 +25,7 @@ import { db } from "../Auth/Firebase";
 import { onSnapshot } from 'firebase/firestore'
 import CircularProgress from '@mui/material/CircularProgress';
 import Swal from 'sweetalert2';
-import Routepages from "./Routepages";
+import Routespages from "../Pages/Routespages";
 import { deleteDoc, doc } from 'firebase/firestore';
 
 const StyledCard = styled(Card)({
@@ -175,11 +175,9 @@ const Shopproducts = () => {
             </StyledCardContent>
           </CardActionArea>
           <CardActions>
-          <Link to="/Update">
-            <StyledButton  size="small">
+            <StyledButton onClick={() => navigate(`/UpdateProduct/${product.id}`)} size="small">
               Edit
             </StyledButton>
-            </Link>
             <StyledButton onClick={() => handleDelete(product.id)} sx={{background:"red"}} size="small">
               Delete
             </StyledButton>

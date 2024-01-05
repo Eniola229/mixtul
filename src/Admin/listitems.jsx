@@ -15,38 +15,38 @@ import Routespages from "../Pages/Routespages";
 
 export const mainListItems = (
   <React.Fragment>
+  <Link to="/Home" style={{color:"black", textDecoration:"none"}}>
     <ListItemButton>
-      <ListItemIcon>
+         <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <Link to="/Home" style={{color:"black", textDecoration:"none"}}>
       <ListItemText sx={{color:"black", textDecoration:"none"}} primary="Dashboard" />
-      </Link>
     </ListItemButton>
+    </Link>
+     <Link to="/Corders" style={{color:"black", textDecoration:"none"}}>
     <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-       <Link to="/Corders" style={{color:"black", textDecoration:"none"}}>
-      <ListItemText primary="Orders" />
-      </Link>
+     <ListItemIcon>
+      <ShoppingCartIcon />
+    </ListItemIcon>
+       <ListItemText primary="Orders" />
     </ListItemButton>
+     </Link>
+     <Link to="/Shopproducts" style={{color:"black", textDecoration:"none"}}>
     <ListItemButton>
       <ListItemIcon>
       <BarChartIcon />
       </ListItemIcon>
-       <Link to="/Shopproducts" style={{color:"black", textDecoration:"none"}}>
       <ListItemText primary="Products" />
-      </Link>
-    </ListItemButton>
+       </ListItemButton>
+     </Link>
+     <Link to="/Userlist" style={{color:"black", textDecoration:"none"}}>
     <ListItemButton>
       <ListItemIcon>
       <PeopleIcon />
       </ListItemIcon>
-        <Link to="/Userlist" style={{color:"black", textDecoration:"none"}}>
-      <ListItemText primary="Users" />
-      </Link>
+          <ListItemText primary="Users" />
     </ListItemButton>
+     </Link>
     <ListItemButton>
       <ListItemIcon>
         <LayersIcon />
@@ -61,7 +61,7 @@ export const secondaryListItems = (
     <ListSubheader component="div" inset>
       Saved reports
     </ListSubheader>
-    <ListItemButton>
+    {/*<ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
@@ -78,6 +78,6 @@ export const secondaryListItems = (
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Year-end sale" />
-    </ListItemButton>
+    </ListItemButton>*/}
   </React.Fragment>
 );

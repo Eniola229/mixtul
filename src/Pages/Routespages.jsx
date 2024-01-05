@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Firstpage from "../componenets/Firstpage";
 import Shop from "./Shop";
 import About from "./About";
-import Cart from "../Products/Cart"
 import React, { useState } from 'react';
 import Contact from "./Contact";
 import Login from "../Auth/Login";
@@ -12,17 +11,15 @@ import Home from "../Admin/Home";
 import Corders from "../Admin/Corders";
 import Shopproducts from "../Admin/Shopproducts";
 import Userlist from "../Admin/Userlist";
-
+import UpdateProduct from "../Admin/UpdateProduct";
 export default function Routespages() {
 
-  const [cartItems, setCartItems] = useState([]);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Firstpage />} />
-        <Route path="/Shop" element={<Shop cartItems={cartItems} setCartItems={setCartItems}/>} />
-        <Route path="/Cart" element={<Cart cartItems={cartItems}/>} />
+        <Route path="/Shop" element={<Shop/>} />
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/Signup" element={<Signup/>} />
@@ -33,6 +30,7 @@ export default function Routespages() {
         <Route path="/Corders" element={<Corders/>} />
         <Route path="/Shopproducts" element={<Shopproducts/>} />
         <Route path="/Userlist" element={<Userlist/>} />
+        <Route path="/UpdateProduct" element={<UpdateProduct/>} />
       </Routes>
     </Router>
   );

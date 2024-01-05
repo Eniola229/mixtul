@@ -94,7 +94,7 @@ const Header = () => {
         </CenterContainer>
 
         <RightContainer sx={{ marginLeft: isSmallScreen ? 'auto' : 0}}>
-         <Link href="/Cart" sx={{color:"white", textDecoration:"none"}}> 
+         <Link href="/ShoppingCart" sx={{color:"white", textDecoration:"none"}}> 
           <StyledIconButton sx={{marginLeft:"1rem"}} color="inherit" aria-label="Shopping Cart">
             <Badge badgeContent={0} color="error">
               <ShoppingCartIcon />

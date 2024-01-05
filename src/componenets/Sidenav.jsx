@@ -15,10 +15,10 @@ import About from "../Pages/About";
 
 const Sidenav = () => {
   const iconList = [
-    { icon:    <Link href="/"> <HomeIcon sx={{color:"chocolate", fontSize:"40px"}}/>  </Link>},
-    { icon:    <Link href="/Shop"> <ShoppingCartIcon sx={{color:"chocolate", fontSize:"40px", marginTop:"1rem"}} /> </Link> },
-    { icon:    <Link href="/About"> <InfoIcon sx={{color:"chocolate", fontSize:"40px", marginTop:"1rem"}} /></Link> },
-    { icon:    <Link href="/Contact"> <ContactSupportIcon sx={{color:"chocolate", fontSize:"40px", marginTop:"1rem"}} /> </Link>},
+    { icon:    <Link href="/"> <HomeIcon sx={{color:"white", fontSize:"40px"}}/>  </Link>},
+    { icon:    <Link href="/Shop"> <ShoppingCartIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /> </Link> },
+    { icon:    <Link href="/About"> <InfoIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /></Link> },
+    { icon:    <Link href="/Contact"> <ContactSupportIcon sx={{color:"white", fontSize:"40px", marginTop:"1rem"}} /> </Link>},
   ];
 
   const sidebarHeight = 100; // Set the height of the sidebar as needed
@@ -26,7 +26,7 @@ const Sidenav = () => {
   const topPosition = `calc(50% - ${sidebarHeight / 2}px)`;
 
   return (
-    <List style={{ position: 'fixed', left: 0, top:"30%",   backgroundColor: 'none', }}>
+    <List style={{ position: 'fixed', left: 0, top:"30%",   backgroundColor: 'rgba(0, 0, 0, 0.5)', }}>
       {iconList.map((item, index) => (
         <ListItem button key={item.text}>
           <ListItemIcon>{item.icon}</ListItemIcon>
